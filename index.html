@@ -3,15 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SISFAM Café & Bakery | Addis Ababa</title>
 
     <meta
         name="description"
-        content="SESFAM Café & Bakery — Premium coffee, fresh bakery creations and beautiful custom cakes."
+        content="SISFAM Café & Bakery — freshly baked products, coffee and beautiful custom cakes in Addis Ababa."
     >
-
-    <title>SESFAM | Café & Bakery</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,33 +25,35 @@
 
 <body>
 
-    <!-- ================= HEADER ================= -->
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
 
     <header class="header" id="header">
 
-        <div class="container nav">
+        <div class="container nav-container">
 
             <a href="#home" class="logo">
-                <img src="logo.webp" alt="SESFAM logo">
+                <img src="logo.webp" alt="SISFAM Café & Bakery">
             </a>
 
             <nav class="desktop-nav">
+
                 <a href="#home">Home</a>
                 <a href="#story">Our Story</a>
                 <a href="#menu">Menu</a>
-                <a href="#cakes">Cakes</a>
-                <a href="#branches">Branches</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#locations">Locations</a>
                 <a href="#contact">Contact</a>
+
             </nav>
 
-            <a href="#contact" class="nav-button">
-                Visit Us
-            </a>
-
-            <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+            >
+                ☰
             </button>
 
         </div>
@@ -62,8 +63,8 @@
             <a href="#home">Home</a>
             <a href="#story">Our Story</a>
             <a href="#menu">Menu</a>
-            <a href="#cakes">Cakes</a>
-            <a href="#branches">Branches</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#locations">Locations</a>
             <a href="#contact">Contact</a>
 
         </div>
@@ -71,7 +72,9 @@
     </header>
 
 
-    <!-- ================= HERO ================= -->
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
 
     <main>
 
@@ -81,7 +84,7 @@
 
                 <img
                     src="bakery.webp"
-                    alt="Fresh SESFAM bakery creations"
+                    alt="SISFAM Bakery"
                 >
 
             </div>
@@ -90,55 +93,89 @@
 
             <div class="container hero-content">
 
-                <div class="hero-text">
+                <p class="eyebrow">
+                    CAFÉ • BAKERY • CUSTOM CAKES
+                </p>
 
-                    <div class="eyebrow">
-                        <span></span>
-                        CAFÉ • BAKERY • CAKES
-                    </div>
+                <h1>
+                    Freshly Made.<br>
+                    Beautifully Served.
+                </h1>
 
-                    <h1>
-                        Made with
-                        <em>passion.</em>
-                    </h1>
+                <p class="hero-text">
+                    Discover freshly baked favorites, handcrafted cakes
+                    and memorable café moments at SISFAM.
+                </p>
 
-                    <p>
-                        Freshly baked moments, carefully crafted coffee,
-                        and beautiful cakes made to make every occasion special.
-                    </p>
+                <div class="hero-buttons">
 
-                    <div class="hero-buttons">
+                    <a
+                        href="#menu"
+                        class="button button-primary"
+                    >
+                        Explore Our Menu
+                    </a>
 
-                        <a href="#menu" class="btn btn-primary">
-                            Explore Our Menu
-                            <span>↗</span>
-                        </a>
-
-                        <a href="#cakes" class="btn btn-outline">
-                            View Our Cakes
-                        </a>
-
-                    </div>
+                    <a
+                        href="#locations"
+                        class="button button-outline"
+                    >
+                        Find Us
+                    </a>
 
                 </div>
 
+            </div>
 
-                <div class="hero-bottom">
+            <div class="hero-scroll">
+                <span>SCROLL</span>
+                <div></div>
+            </div>
 
-                    <div class="hero-stat">
-                        <strong>01</strong>
-                        <span>Fresh Every Day</span>
-                    </div>
+        </section>
 
-                    <div class="hero-stat">
-                        <strong>02</strong>
-                        <span>Two Locations</span>
-                    </div>
 
-                    <div class="hero-stat">
-                        <strong>03</strong>
-                        <span>Made With Care</span>
-                    </div>
+        <!-- =====================================================
+             STORY
+        ====================================================== -->
+
+        <section class="story section" id="story">
+
+            <div class="container story-grid">
+
+                <div class="story-content image-reveal">
+
+                    <p class="section-label">
+                        OUR STORY
+                    </p>
+
+                    <h2>
+                        Made With Care,<br>
+                        Served With Heart.
+                    </h2>
+
+                    <p>
+                        At SISFAM, we believe that great food brings people
+                        together. From freshly baked treats to carefully
+                        prepared cakes and coffee, every creation is made
+                        with attention to quality and taste.
+                    </p>
+
+                    <p>
+                        Whether you're stopping by for your morning coffee,
+                        celebrating a special occasion or simply looking
+                        for something delicious, SISFAM is here to make
+                        every moment special.
+                    </p>
+
+                </div>
+
+                <div class="story-image image-reveal">
+
+                    <img
+                        src="cake1.webp"
+                        alt="SISFAM cake"
+                    >
 
                 </div>
 
@@ -147,35 +184,45 @@
         </section>
 
 
-        <!-- ================= INTRO ================= -->
+        <!-- =====================================================
+             FEATURE
+        ====================================================== -->
 
-        <section class="intro section" id="story">
+        <section class="feature section">
 
-            <div class="container intro-grid">
+            <div class="container feature-grid">
 
-                <div class="section-label">
-                    <span>01</span>
-                    OUR STORY
+                <div class="feature-image image-reveal">
+
+                    <img
+                        src="cake3.webp"
+                        alt="Beautiful SISFAM cake"
+                    >
+
                 </div>
 
-                <div class="intro-content">
+                <div class="feature-content">
+
+                    <p class="section-label">
+                        SPECIAL MOMENTS
+                    </p>
 
                     <h2>
-                        More than coffee.
-                        <br>
-                        <span>It's a moment.</span>
+                        Cakes For Every
+                        Celebration.
                     </h2>
 
                     <p>
-                        At SESFAM, we believe great food brings people together.
-                        From the first cup of coffee in the morning to a beautiful
-                        cake celebrating a special day, every creation is prepared
-                        with care and attention to detail.
+                        From birthdays and anniversaries to weddings and
+                        special gatherings, SISFAM creates beautiful cakes
+                        designed to make your celebration memorable.
                     </p>
 
-                    <a href="#contact" class="text-link">
-                        Discover SESFAM
-                        <span>→</span>
+                    <a
+                        href="#contact"
+                        class="text-link"
+                    >
+                        Contact Us →
                     </a>
 
                 </div>
@@ -185,103 +232,9 @@
         </section>
 
 
-        <!-- ================= FEATURE ================= -->
-
-        <section class="feature section">
-
-            <div class="container feature-grid">
-
-                <div class="feature-image image-reveal">
-
-                    <img
-                        src="cake1.webp"
-                        alt="SESFAM cake"
-                    >
-
-                    <div class="floating-card">
-
-                        <span class="floating-number">01</span>
-
-                        <div>
-                            <strong>Freshly Crafted</strong>
-                            <small>Every single day</small>
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="feature-content">
-
-                    <div class="section-label">
-                        <span>02</span>
-                        THE SESFAM EXPERIENCE
-                    </div>
-
-                    <h2>
-                        Crafted for
-                        <em>your moments.</em>
-                    </h2>
-
-                    <p>
-                        Whether you're meeting friends, enjoying a quiet coffee,
-                        celebrating a wedding, or simply treating yourself,
-                        SESFAM creates something worth remembering.
-                    </p>
-
-                    <div class="feature-list">
-
-                        <div class="feature-item">
-
-                            <span class="feature-icon">✦</span>
-
-                            <div>
-                                <h3>Fresh Bakery</h3>
-                                <p>
-                                    Delicious bakery creations prepared fresh.
-                                </p>
-                            </div>
-
-                        </div>
-
-                        <div class="feature-item">
-
-                            <span class="feature-icon">✦</span>
-
-                            <div>
-                                <h3>Beautiful Cakes</h3>
-                                <p>
-                                    Cakes designed for birthdays, weddings and
-                                    special celebrations.
-                                </p>
-                            </div>
-
-                        </div>
-
-                        <div class="feature-item">
-
-                            <span class="feature-icon">✦</span>
-
-                            <div>
-                                <h3>Premium Café</h3>
-                                <p>
-                                    A welcoming place to relax and enjoy your day.
-                                </p>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= MENU ================= -->
+        <!-- =====================================================
+             MENU
+        ====================================================== -->
 
         <section class="menu-section section" id="menu">
 
@@ -289,20 +242,17 @@
 
                 <div class="section-heading">
 
-                    <div class="section-label">
-                        <span>03</span>
-                        OUR MENU
-                    </div>
+                    <p class="section-label">
+                        WHAT WE SERVE
+                    </p>
 
                     <h2>
-                        Simple ingredients.
-                        <br>
-                        <em>Beautifully made.</em>
+                        Something For Every Taste
                     </h2>
 
-                    <p>
-                        A selection of café favorites and bakery creations
-                        prepared for every kind of day.
+                    <p class="section-description">
+                        Fresh ingredients, thoughtful preparation and
+                        flavors made to be enjoyed.
                     </p>
 
                 </div>
@@ -312,54 +262,66 @@
 
                     <article class="menu-card">
 
-                        <div class="menu-number">01</div>
+                        <span class="menu-number">
+                            01
+                        </span>
 
-                        <div class="menu-card-icon">☕</div>
-
-                        <h3>Coffee</h3>
+                        <h3>
+                            Coffee
+                        </h3>
 
                         <p>
-                            Rich, aromatic coffee made for slow mornings
-                            and good conversations.
+                            Freshly prepared coffee and café favorites
+                            perfect for your daily break.
                         </p>
 
-                        <span class="menu-arrow">↗</span>
+                        <span class="menu-arrow">
+                            →
+                        </span>
 
                     </article>
 
 
                     <article class="menu-card">
 
-                        <div class="menu-number">02</div>
+                        <span class="menu-number">
+                            02
+                        </span>
 
-                        <div class="menu-card-icon">🥐</div>
-
-                        <h3>Bakery</h3>
+                        <h3>
+                            Bakery
+                        </h3>
 
                         <p>
-                            Fresh pastries and baked creations made
-                            throughout the day.
+                            Freshly baked bread, pastries and sweet
+                            treats made with care.
                         </p>
 
-                        <span class="menu-arrow">↗</span>
+                        <span class="menu-arrow">
+                            →
+                        </span>
 
                     </article>
 
 
                     <article class="menu-card">
 
-                        <div class="menu-number">03</div>
+                        <span class="menu-number">
+                            03
+                        </span>
 
-                        <div class="menu-card-icon">🎂</div>
-
-                        <h3>Custom Cakes</h3>
+                        <h3>
+                            Custom Cakes
+                        </h3>
 
                         <p>
                             Beautiful cakes created for birthdays,
-                            weddings and special events.
+                            weddings and special occasions.
                         </p>
 
-                        <span class="menu-arrow">↗</span>
+                        <span class="menu-arrow">
+                            →
+                        </span>
 
                     </article>
 
@@ -370,206 +332,235 @@
         </section>
 
 
-        <!-- ================= CAKES ================= -->
+        <!-- =====================================================
+             GALLERY
+        ====================================================== -->
 
-        <section class="cakes section" id="cakes">
+        <section class="gallery section" id="gallery">
 
             <div class="container">
 
-                <div class="cakes-top">
+                <div class="section-heading">
+
+                    <p class="section-label">
+                        OUR CREATIONS
+                    </p>
+
+                    <h2>
+                        A Taste Of SISFAM
+                    </h2>
+
+                    <p class="section-description">
+                        A glimpse of the cakes and bakery creations
+                        made for our customers.
+                    </p>
+
+                </div>
+
+
+                <div class="gallery-grid">
+
+                    <div class="gallery-item gallery-large image-reveal">
+
+                        <img
+                            src="wedding-cake.webp"
+                            alt="SISFAM celebration cake"
+                        >
+
+                        <div class="gallery-caption">
+                            Celebration Cakes
+                        </div>
+
+                    </div>
+
+
+                    <div class="gallery-item image-reveal">
+
+                        <img
+                            src="cake3.webp"
+                            alt="SISFAM cake"
+                        >
+
+                        <div class="gallery-caption">
+                            Custom Cakes
+                        </div>
+
+                    </div>
+
+
+                    <div class="gallery-item image-reveal">
+
+                        <img
+                            src="cake1.webp"
+                            alt="SISFAM bakery cake"
+                        >
+
+                        <div class="gallery-caption">
+                            Freshly Made
+                        </div>
+
+                    </div>
+
+
+                    <div class="gallery-item image-reveal">
+
+                        <img
+                            src="bakery.webp"
+                            alt="SISFAM bakery"
+                        >
+
+                        <div class="gallery-caption">
+                            Our Bakery
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             LOCATIONS
+        ====================================================== -->
+
+        <section class="locations section" id="locations">
+
+            <div class="container">
+
+                <div class="locations-header">
 
                     <div>
 
-                        <div class="section-label">
-                            <span>04</span>
-                            CAKE STUDIO
-                        </div>
+                        <p class="section-label">
+                            VISIT SISFAM
+                        </p>
 
                         <h2>
-                            Made for your
-                            <em>big moments.</em>
+                            Find Us Near You
                         </h2>
 
                     </div>
 
-                    <p>
-                        From elegant wedding cakes to unforgettable
-                        celebration designs, we make every cake special.
+                    <p class="locations-intro">
+                        Visit one of our locations for freshly baked
+                        products, beautiful cakes and your favorite
+                        café moments.
                     </p>
 
                 </div>
 
 
-                <div class="cake-gallery">
+                <div class="locations-list">
 
-                    <div class="cake-main">
+                    <!-- MAIN BAKERY -->
 
-                        <img
-                            src="wedding-cake.webp"
-                            alt="SESFAM wedding cake"
+                    <article class="location-card">
+
+                        <div class="location-number">
+                            01
+                        </div>
+
+                        <div class="location-info">
+
+                            <span>
+                                MAIN BAKERY
+                            </span>
+
+                            <h3>
+                                Main Bakery
+                            </h3>
+
+                            <p>
+                                Behind Lebu M Church
+                            </p>
+
+                        </div>
+
+                        <a
+                            href="https://www.google.com/maps/search/?api=1&query=Lebu%20M%20Church%20Addis%20Ababa"
+                            target="_blank"
+                            rel="noopener"
+                            class="location-link"
                         >
-
-                        <div class="gallery-caption">
-                            <span>01</span>
-                            Wedding & Celebration Cakes
-                        </div>
-
-                    </div>
-
-
-                    <div class="cake-side">
-
-                        <div class="cake-small">
-
-                            <img
-                                src="cake3.webp"
-                                alt="SESFAM custom cake"
-                            >
-
-                            <div class="gallery-caption">
-                                <span>02</span>
-                                Custom Creations
-                            </div>
-
-                        </div>
-
-
-                        <div class="cake-small">
-
-                            <img
-                                src="cake1.webp"
-                                alt="SESFAM bakery cake"
-                            >
-
-                            <div class="gallery-caption">
-                                <span>03</span>
-                                Freshly Made
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="cake-bottom">
-
-                    <img
-                        src="cake5.webp"
-                        alt="SESFAM bakery"
-                    >
-
-                    <div>
-
-                        <span class="mini-label">
-                            SPECIAL OCCASIONS
-                        </span>
-
-                        <h3>
-                            Your celebration deserves
-                            something beautiful.
-                        </h3>
-
-                        <a href="#contact" class="text-link">
-                            Order a cake
-                            <span>→</span>
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= BRANCHES ================= -->
-
-        <section class="branches section" id="branches">
-
-            <div class="container">
-
-                <div class="section-heading centered">
-
-                    <div class="section-label">
-                        <span>05</span>
-                        FIND US
-                    </div>
-
-                    <h2>
-                        Two places.
-                        <em>One SESFAM.</em>
-                    </h2>
-
-                    <p>
-                        Visit us at either of our branches and experience
-                        the SESFAM atmosphere.
-                    </p>
-
-                </div>
-
-
-                <div class="branches-grid">
-
-                    <article class="branch-card">
-
-                        <div class="branch-top">
-
-                            <span>01</span>
-
-                            <div class="branch-status">
-                                OPEN
-                            </div>
-
-                        </div>
-
-                        <h3>SESFAM Café</h3>
-
-                        <p>
-                            Your place for coffee, conversations
-                            and relaxing moments.
-                        </p>
-
-                        <div class="branch-info">
-                            <span>📍 Branch One</span>
-                            <span>☕ Café</span>
-                        </div>
-
-                        <a href="#contact">
-                            Get Directions →
+                            View Map
+                            <span>↗</span>
                         </a>
 
                     </article>
 
 
-                    <article class="branch-card featured">
+                    <!-- JOMO 1 -->
 
-                        <div class="branch-top">
+                    <article class="location-card">
 
-                            <span>02</span>
+                        <div class="location-number">
+                            02
+                        </div>
 
-                            <div class="branch-status">
-                                OPEN
-                            </div>
+                        <div class="location-info">
+
+                            <span>
+                                JOMO 1
+                            </span>
+
+                            <h3>
+                                Jomo 1
+                            </h3>
+
+                            <p>
+                                In front of the Post Office
+                            </p>
 
                         </div>
 
-                        <h3>SESFAM Bakery</h3>
+                        <a
+                            href="https://www.google.com/maps/search/?api=1&query=Jomo%201%20Addis%20Ababa%20Post%20Office"
+                            target="_blank"
+                            rel="noopener"
+                            class="location-link"
+                        >
+                            View Map
+                            <span>↗</span>
+                        </a>
 
-                        <p>
-                            Fresh bakery creations and beautiful
-                            cakes for every occasion.
-                        </p>
+                    </article>
 
-                        <div class="branch-info">
-                            <span>📍 Branch Two</span>
-                            <span>🥐 Bakery</span>
+
+                    <!-- JOMO 3 -->
+
+                    <article class="location-card">
+
+                        <div class="location-number">
+                            03
                         </div>
 
-                        <a href="#contact">
-                            Get Directions →
+                        <div class="location-info">
+
+                            <span>
+                                JOMO 3
+                            </span>
+
+                            <h3>
+                                Jomo 3
+                            </h3>
+
+                            <p>
+                                In front of Mestewat Factory
+                            </p>
+
+                        </div>
+
+                        <a
+                            href="https://www.google.com/maps/search/?api=1&query=Mestewat%20Factory%20Addis%20Ababa"
+                            target="_blank"
+                            rel="noopener"
+                            class="location-link"
+                        >
+                            View Map
+                            <span>↗</span>
                         </a>
 
                     </article>
@@ -581,15 +572,17 @@
         </section>
 
 
-        <!-- ================= CTA ================= -->
+        <!-- =====================================================
+             CTA
+        ====================================================== -->
 
-        <section class="cta">
+        <section class="cta section">
 
-            <div class="cta-background">
+            <div class="cta-image">
 
                 <img
                     src="cake3.webp"
-                    alt=""
+                    alt="SISFAM custom cake"
                 >
 
             </div>
@@ -598,23 +591,24 @@
 
             <div class="container cta-content">
 
-                <span class="mini-label">
-                    LET'S MAKE SOMETHING SPECIAL
-                </span>
+                <p class="section-label">
+                    MAKE YOUR MOMENT SPECIAL
+                </p>
 
                 <h2>
-                    Have a celebration
-                    <br>
-                    coming up?
+                    Planning A Celebration?
                 </h2>
 
                 <p>
-                    Talk to SESFAM about your next beautiful cake.
+                    Let SISFAM create something delicious for
+                    your special occasion.
                 </p>
 
-                <a href="#contact" class="btn btn-light">
-                    Contact SESFAM
-                    <span>↗</span>
+                <a
+                    href="#contact"
+                    class="button button-primary"
+                >
+                    Contact SISFAM
                 </a>
 
             </div>
@@ -622,60 +616,116 @@
         </section>
 
 
-        <!-- ================= CONTACT ================= -->
+        <!-- =====================================================
+             CONTACT
+        ====================================================== -->
 
         <section class="contact section" id="contact">
 
-            <div class="container contact-grid">
+            <div class="container contact-premium">
 
-                <div>
+                <div class="contact-left">
 
-                    <div class="section-label">
-                        <span>06</span>
-                        CONTACT
-                    </div>
+                    <p class="section-label">
+                        GET IN TOUCH
+                    </p>
 
                     <h2>
-                        Come say
-                        <em>hello.</em>
+                        Let's Make
+                        Something Special.
                     </h2>
 
-                    <p>
-                        We'd love to welcome you at SESFAM.
-                        For cake orders, questions or general information,
-                        get in touch with us.
+                    <p class="contact-description">
+                        Have a question, want to order a cake or need
+                        more information? Get in touch with the SISFAM team.
                     </p>
+
+                    <a
+                        href="https://wa.me/251911401078"
+                        target="_blank"
+                        rel="noopener"
+                        class="whatsapp-main"
+                    >
+                        <span>💬</span>
+
+                        Chat With Us on WhatsApp
+
+                        <strong>↗</strong>
+                    </a>
 
                 </div>
 
 
-                <div class="contact-details">
+                <div class="contact-right">
 
-                    <div class="contact-row">
+                    <!-- PHONE -->
 
-                        <span>PHONE</span>
+                    <div class="contact-item">
 
-                        <a href="tel:+251911401078">
-                            +251 911401078
-                        </a>
+                        <span class="contact-label">
+                            TELEPHONE
+                        </span>
+
+                        <div class="phone-list">
+
+                            <a href="tel:+251911401078">
+                                0911 401 078
+                            </a>
+
+                            <a href="tel:+251911395474">
+                                0911 395 474
+                            </a>
+
+                        </div>
 
                     </div>
 
 
-                    <div class="contact-row">
+                    <!-- EMAIL -->
 
-                        <span>EMAIL</span>
+                    <div class="contact-item">
 
-                        <a href="mailto:hello@sesfam.com">
-                            hello@sesfam.com
-                        </a>
+                        <span class="contact-label">
+                            EMAIL
+                        </span>
+
+                        <div class="email-list">
+
+                            <a href="mailto:sisfamplc7@gmail.com">
+                                sisfamplc7@gmail.com
+                            </a>
+
+                            <a href="mailto:dinegddlegess@gmail.com">
+                                dinegddlegess@gmail.com
+                            </a>
+
+                        </div>
 
                     </div>
 
 
-                    <div class="contact-row">
+                    <!-- PO BOX -->
 
-                        <span>LOCATION</span>
+                    <div class="contact-item">
+
+                        <span class="contact-label">
+                            P.O. BOX
+                        </span>
+
+                        <p>
+                            17750
+                        </p>
+
+                    </div>
+
+
+                    <!-- LOCATION -->
+
+                    <div class="contact-item">
+
+                        <span class="contact-label">
+                            LOCATION
+                        </span>
 
                         <p>
                             Addis Ababa, Ethiopia
@@ -692,49 +742,55 @@
     </main>
 
 
-    <!-- ================= FOOTER ================= -->
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
 
     <footer class="footer">
 
-        <div class="container footer-main">
+        <div class="container">
 
-            <div class="footer-brand">
+            <div class="footer-top">
 
-                <img
-                    src="logo.webp"
-                    alt="SESFAM"
-                >
+                <div class="footer-brand">
 
-                <p>
-                    Café • Bakery • Cakes
-                </p>
+                    <img
+                        src="logo.webp"
+                        alt="SISFAM"
+                    >
+
+                    <p>
+                        Café • Bakery • Custom Cakes
+                    </p>
+
+                </div>
+
+
+                <div class="footer-links">
+
+                    <a href="#home">Home</a>
+                    <a href="#story">Our Story</a>
+                    <a href="#menu">Menu</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#locations">Locations</a>
+                    <a href="#contact">Contact</a>
+
+                </div>
 
             </div>
 
 
-            <div class="footer-links">
+            <div class="footer-bottom">
 
-                <a href="#home">Home</a>
-                <a href="#story">Story</a>
-                <a href="#menu">Menu</a>
-                <a href="#cakes">Cakes</a>
-                <a href="#branches">Branches</a>
-                <a href="#contact">Contact</a>
+                <span id="footerYear">
+                    © 2026 SISFAM. All rights reserved.
+                </span>
+
+                <span>
+                    Addis Ababa, Ethiopia
+                </span>
 
             </div>
-
-        </div>
-
-
-        <div class="container footer-bottom">
-
-            <span>
-                © 2026 SESFAM. All rights reserved.
-            </span>
-
-            <span>
-                Made with care.
-            </span>
 
         </div>
 

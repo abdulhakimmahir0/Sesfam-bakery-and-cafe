@@ -1,5 +1,5 @@
 /* =========================================================
-   SESFAM CAFÉ & BAKERY
+   SISFAM CAFÉ & BAKERY
    JAVASCRIPT
 ========================================================= */
 
@@ -11,36 +11,50 @@
 const menuToggle = document.getElementById("menuToggle");
 const mobileMenu = document.getElementById("mobileMenu");
 
-menuToggle.addEventListener("click", () => {
-    mobileMenu.classList.toggle("active");
-});
+if (menuToggle && mobileMenu) {
+
+    menuToggle.addEventListener("click", () => {
+
+        mobileMenu.classList.toggle("active");
+
+    });
+
+}
 
 
-/* Close mobile menu after clicking a link */
+/* Close mobile menu when a link is clicked */
 
 const mobileLinks = document.querySelectorAll(".mobile-menu a");
 
 mobileLinks.forEach(link => {
 
     link.addEventListener("click", () => {
+
         mobileMenu.classList.remove("active");
+
     });
 
 });
 
 
 /* =========================================================
-   HEADER ON SCROLL
+   HEADER
 ========================================================= */
 
 const header = document.getElementById("header");
 
 function updateHeader() {
 
+    if (!header) return;
+
     if (window.scrollY > 50) {
+
         header.classList.add("scrolled");
+
     } else {
+
         header.classList.remove("scrolled");
+
     }
 
 }
@@ -51,36 +65,52 @@ updateHeader();
 
 
 /* =========================================================
-   IMAGE REVEAL ANIMATION
+   IMAGE REVEAL
 ========================================================= */
 
 const revealElements = document.querySelectorAll(".image-reveal");
 
-const revealObserver = new IntersectionObserver(
-    entries => {
+if ("IntersectionObserver" in window) {
 
-        entries.forEach(entry => {
+    const revealObserver = new IntersectionObserver(
 
-            if (entry.isIntersecting) {
+        entries => {
 
-                entry.target.classList.add("show");
+            entries.forEach(entry => {
 
-                revealObserver.unobserve(entry.target);
+                if (entry.isIntersecting) {
 
-            }
+                    entry.target.classList.add("show");
 
-        });
+                    revealObserver.unobserve(entry.target);
 
-    },
-    {
-        threshold: 0.15
-    }
-);
+                }
 
+            });
 
-revealElements.forEach(element => {
-    revealObserver.observe(element);
-});
+        },
+
+        {
+            threshold: 0.15
+        }
+
+    );
+
+    revealElements.forEach(element => {
+
+        revealObserver.observe(element);
+
+    });
+
+} else {
+
+    revealElements.forEach(element => {
+
+        element.classList.add("show");
+
+    });
+
+}
 
 
 /* =========================================================
@@ -93,15 +123,23 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
         const targetId = this.getAttribute("href");
 
-        if (targetId === "#") return;
+        if (
+            !targetId ||
+            targetId === "#"
+        ) {
+            return;
+        }
 
         const target = document.querySelector(targetId);
 
-        if (!target) return;
+        if (!target) {
+            return;
+        }
 
         event.preventDefault();
 
-        const headerHeight = header.offsetHeight;
+        const headerHeight =
+            header ? header.offsetHeight : 0;
 
         const targetPosition =
             target.getBoundingClientRect().top +
@@ -109,8 +147,11 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
             headerHeight;
 
         window.scrollTo({
+
             top: targetPosition,
+
             behavior: "smooth"
+
         });
 
     });
@@ -119,10 +160,11 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
 
 /* =========================================================
-   SIMPLE PARALLAX EFFECT
+   HERO PARALLAX
 ========================================================= */
 
-const heroImage = document.querySelector(".hero-background img");
+const heroImage =
+    document.querySelector(".hero-background img");
 
 window.addEventListener("scroll", () => {
 
@@ -133,7 +175,7 @@ window.addEventListener("scroll", () => {
     if (scrollPosition < window.innerHeight) {
 
         heroImage.style.transform =
-            `translateY(${scrollPosition * 0.12}px)`;
+            `translateY(${scrollPosition * 0.12}px) scale(1.05)`;
 
     }
 
@@ -141,7 +183,7 @@ window.addEventListener("scroll", () => {
 
 
 /* =========================================================
-   PREVENT BROKEN IMAGE FEEL
+   IMAGE ERROR HANDLING
 ========================================================= */
 
 document.querySelectorAll("img").forEach(image => {
@@ -150,27 +192,32 @@ document.querySelectorAll("img").forEach(image => {
 
         image.style.background = "#ddd6cc";
 
+        image.style.minHeight = "150px";
+
     });
 
 });
 
 
 /* =========================================================
-   CURRENT YEAR
+   FOOTER YEAR
 ========================================================= */
 
-const footerYear = document.querySelector(".footer-bottom span");
+const footerYear =
+    document.getElementById("footerYear");
 
 if (footerYear) {
 
     footerYear.textContent =
-        `© ${new Date().getFullYear()} SESFAM. All rights reserved.`;
+        `© ${new Date().getFullYear()} SISFAM. All rights reserved.`;
 
 }
 
 
 /* =========================================================
-   DONE
+   PAGE LOADED
 ========================================================= */
 
-console.log("SESFAM website loaded successfully.");
+console.log(
+    "SISFAM Café & Bakery website loaded successfully."
+);
