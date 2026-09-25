@@ -1,12 +1,10 @@
 /* =========================================================
    SISFAM CAFÉ & BAKERY
-   JAVASCRIPT
+   PREMIUM WEBSITE JAVASCRIPT
 ========================================================= */
 
 
-/* =========================================================
-   MOBILE MENU
-========================================================= */
+/* ================= MOBILE MENU ================= */
 
 const menuToggle = document.getElementById("menuToggle");
 const mobileMenu = document.getElementById("mobileMenu");
@@ -22,11 +20,7 @@ if (menuToggle && mobileMenu) {
 }
 
 
-/* Close mobile menu when a link is clicked */
-
-const mobileLinks = document.querySelectorAll(".mobile-menu a");
-
-mobileLinks.forEach(link => {
+document.querySelectorAll(".mobile-menu a").forEach(link => {
 
     link.addEventListener("click", () => {
 
@@ -37,9 +31,7 @@ mobileLinks.forEach(link => {
 });
 
 
-/* =========================================================
-   HEADER
-========================================================= */
+/* ================= HEADER ================= */
 
 const header = document.getElementById("header");
 
@@ -47,7 +39,7 @@ function updateHeader() {
 
     if (!header) return;
 
-    if (window.scrollY > 50) {
+    if (window.scrollY > 40) {
 
         header.classList.add("scrolled");
 
@@ -64,41 +56,43 @@ window.addEventListener("scroll", updateHeader);
 updateHeader();
 
 
-/* =========================================================
-   IMAGE REVEAL
-========================================================= */
+/* ================= SCROLL REVEAL ================= */
 
-const revealElements = document.querySelectorAll(".image-reveal");
+const revealElements =
+    document.querySelectorAll(".reveal");
+
 
 if ("IntersectionObserver" in window) {
 
-    const revealObserver = new IntersectionObserver(
+    const observer =
+        new IntersectionObserver(
 
-        entries => {
+            entries => {
 
-            entries.forEach(entry => {
+                entries.forEach(entry => {
 
-                if (entry.isIntersecting) {
+                    if (entry.isIntersecting) {
 
-                    entry.target.classList.add("show");
+                        entry.target.classList.add("show");
 
-                    revealObserver.unobserve(entry.target);
+                        observer.unobserve(entry.target);
 
-                }
+                    }
 
-            });
+                });
 
-        },
+            },
 
-        {
-            threshold: 0.15
-        }
+            {
+                threshold: 0.12
+            }
 
-    );
+        );
+
 
     revealElements.forEach(element => {
 
-        revealObserver.observe(element);
+        observer.observe(element);
 
     });
 
@@ -113,95 +107,102 @@ if ("IntersectionObserver" in window) {
 }
 
 
-/* =========================================================
-   SMOOTH SCROLL
-========================================================= */
+/* ================= SMOOTH NAVIGATION ================= */
 
-document.querySelectorAll('a[href^="#"]').forEach(link => {
+document
+    .querySelectorAll('a[href^="#"]')
+    .forEach(link => {
 
-    link.addEventListener("click", function (event) {
+        link.addEventListener("click", function(event) {
 
-        const targetId = this.getAttribute("href");
+            const targetId =
+                this.getAttribute("href");
 
-        if (
-            !targetId ||
-            targetId === "#"
-        ) {
-            return;
-        }
+            if (
+                !targetId ||
+                targetId === "#"
+            ) {
+                return;
+            }
 
-        const target = document.querySelector(targetId);
+            const target =
+                document.querySelector(targetId);
 
-        if (!target) {
-            return;
-        }
+            if (!target) return;
 
-        event.preventDefault();
+            event.preventDefault();
 
-        const headerHeight =
-            header ? header.offsetHeight : 0;
+            const headerHeight =
+                header
+                    ? header.offsetHeight
+                    : 0;
 
-        const targetPosition =
-            target.getBoundingClientRect().top +
-            window.scrollY -
-            headerHeight;
+            const position =
+                target.getBoundingClientRect().top +
+                window.scrollY -
+                headerHeight;
 
-        window.scrollTo({
+            window.scrollTo({
 
-            top: targetPosition,
+                top: position,
 
-            behavior: "smooth"
+                behavior: "smooth"
+
+            });
 
         });
 
     });
 
-});
 
-
-/* =========================================================
-   HERO PARALLAX
-========================================================= */
+/* ================= HERO PARALLAX ================= */
 
 const heroImage =
-    document.querySelector(".hero-background img");
+    document.querySelector(".hero-image img");
+
 
 window.addEventListener("scroll", () => {
 
     if (!heroImage) return;
 
-    const scrollPosition = window.scrollY;
+    if (window.innerWidth <= 800) return;
 
-    if (scrollPosition < window.innerHeight) {
+    const scroll =
+        window.scrollY;
+
+    if (scroll < window.innerHeight) {
 
         heroImage.style.transform =
-            `translateY(${scrollPosition * 0.12}px) scale(1.05)`;
+            `scale(1.04) translateY(${scroll * 0.08}px)`;
 
     }
 
 });
 
 
-/* =========================================================
-   IMAGE ERROR HANDLING
-========================================================= */
+/* ================= IMAGE FALLBACK ================= */
 
-document.querySelectorAll("img").forEach(image => {
+document
+    .querySelectorAll("img")
+    .forEach(image => {
 
-    image.addEventListener("error", () => {
+        image.addEventListener(
+            "error",
+            () => {
 
-        image.style.background = "#ddd6cc";
+                image.style.background =
+                    "#ded5c9";
 
-        image.style.minHeight = "150px";
+                image.style.minHeight =
+                    "150px";
+
+            }
+        );
 
     });
 
-});
 
-
-/* =========================================================
-   FOOTER YEAR
-========================================================= */
+/* ================= FOOTER YEAR ================= */
 
 const footerYear =
     document.getElementById("footerYear");
@@ -214,10 +215,8 @@ if (footerYear) {
 }
 
 
-/* =========================================================
-   PAGE LOADED
-========================================================= */
+/* ================= CONSOLE ================= */
 
 console.log(
-    "SISFAM Café & Bakery website loaded successfully."
+    "SISFAM Café & Bakery — Premium website loaded."
 );
