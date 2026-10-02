@@ -1,52 +1,23 @@
-/* =========================================================
+/* =====================================================
    SISFAM CAFÉ & BAKERY
-   PREMIUM WEBSITE JAVASCRIPT
-========================================================= */
-
-
-/* ================= MOBILE MENU ================= */
-
-const menuToggle = document.getElementById("menuToggle");
-const mobileMenu = document.getElementById("mobileMenu");
-
-if (menuToggle && mobileMenu) {
-
-    menuToggle.addEventListener("click", () => {
-
-        mobileMenu.classList.toggle("active");
-
-    });
-
-}
-
-
-document.querySelectorAll(".mobile-menu a").forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        mobileMenu.classList.remove("active");
-
-    });
-
-});
-
-
-/* ================= HEADER ================= */
+===================================================== */
 
 const header = document.getElementById("header");
+const menuToggle = document.getElementById("menuToggle");
+const nav = document.getElementById("nav");
+const navLinks = document.querySelectorAll(".nav-link");
+
+
+/* =====================================================
+   HEADER SCROLL EFFECT
+===================================================== */
 
 function updateHeader() {
 
-    if (!header) return;
-
     if (window.scrollY > 40) {
-
         header.classList.add("scrolled");
-
     } else {
-
         header.classList.remove("scrolled");
-
     }
 
 }
@@ -56,167 +27,159 @@ window.addEventListener("scroll", updateHeader);
 updateHeader();
 
 
-/* ================= SCROLL REVEAL ================= */
+/* =====================================================
+   MOBILE MENU
+===================================================== */
 
-const revealElements =
-    document.querySelectorAll(".reveal");
+menuToggle.addEventListener("click", () => {
 
+    nav.classList.toggle("open");
 
-if ("IntersectionObserver" in window) {
-
-    const observer =
-        new IntersectionObserver(
-
-            entries => {
-
-                entries.forEach(entry => {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.classList.add("show");
-
-                        observer.unobserve(entry.target);
-
-                    }
-
-                });
-
-            },
-
-            {
-                threshold: 0.12
-            }
-
-        );
+});
 
 
-    revealElements.forEach(element => {
+/* =====================================================
+   CLOSE MOBILE MENU
+===================================================== */
 
-        observer.observe(element);
+navLinks.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        nav.classList.remove("open");
 
     });
 
-} else {
-
-    revealElements.forEach(element => {
-
-        element.classList.add("show");
-
-    });
-
-}
+});
 
 
-/* ================= SMOOTH NAVIGATION ================= */
+/* =====================================================
+   CLOSE MENU WHEN CLICKING OUTSIDE
+===================================================== */
 
-document
-    .querySelectorAll('a[href^="#"]')
-    .forEach(link => {
+document.addEventListener("click", (event) => {
 
-        link.addEventListener("click", function(event) {
+    const clickedInsideNav = nav.contains(event.target);
+    const clickedToggle = menuToggle.contains(event.target);
 
-            const targetId =
-                this.getAttribute("href");
+    if (!clickedInsideNav && !clickedToggle) {
 
-            if (
-                !targetId ||
-                targetId === "#"
-            ) {
-                return;
-            }
-
-            const target =
-                document.querySelector(targetId);
-
-            if (!target) return;
-
-            event.preventDefault();
-
-            const headerHeight =
-                header
-                    ? header.offsetHeight
-                    : 0;
-
-            const position =
-                target.getBoundingClientRect().top +
-                window.scrollY -
-                headerHeight;
-
-            window.scrollTo({
-
-                top: position,
-
-                behavior: "smooth"
-
-            });
-
-        });
-
-    });
-
-
-/* ================= HERO PARALLAX ================= */
-
-const heroImage =
-    document.querySelector(".hero-image img");
-
-
-window.addEventListener("scroll", () => {
-
-    if (!heroImage) return;
-
-    if (window.innerWidth <= 800) return;
-
-    const scroll =
-        window.scrollY;
-
-    if (scroll < window.innerHeight) {
-
-        heroImage.style.transform =
-            `scale(1.04) translateY(${scroll * 0.08}px)`;
+        nav.classList.remove("open");
 
     }
 
 });
 
 
-/* ================= IMAGE FALLBACK ================= */
+/* =====================================================
+   ACTIVE NAVIGATION
+===================================================== */
 
-document
-    .querySelectorAll("img")
-    .forEach(image => {
+const sections = document.querySelectorAll("section[id]");
 
-        image.addEventListener(
-            "error",
-            () => {
+function updateActiveNav() {
 
-                image.style.background =
-                    "#ded5c9";
+    const scrollPosition = window.scrollY + 180;
 
-                image.style.minHeight =
-                    "150px";
+    sections.forEach(section => {
 
-            }
-        );
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
+
+        const id = section.getAttribute("id");
+
+        if (
+            scrollPosition >= sectionTop &&
+            scrollPosition < sectionBottom
+        ) {
+
+            navLinks.forEach(link => {
+
+                link.classList.remove("active");
+
+                if (link.getAttribute("href") === `#${id}`) {
+                    link.classList.add("active");
+                }
+
+            });
+
+        }
 
     });
 
+}
 
-/* ================= FOOTER YEAR ================= */
+window.addEventListener("scroll", updateActiveNav);
 
-const footerYear =
-    document.getElementById("footerYear");
 
-if (footerYear) {
+/* =====================================================
+   CURRENT YEAR
+===================================================== */
 
-    footerYear.textContent =
-        `© ${new Date().getFullYear()} SISFAM. All rights reserved.`;
+const year = document.getElementById("year");
+
+if (year) {
+
+    year.textContent = new Date().getFullYear();
 
 }
 
 
-/* ================= CONSOLE ================= */
+/* =====================================================
+   IMAGE FALLBACK
+===================================================== */
 
-console.log(
-    "SISFAM Café & Bakery — Premium website loaded."
+document.querySelectorAll("img").forEach(image => {
+
+    image.addEventListener("error", () => {
+
+        image.style.background = "#e9dfd1";
+
+        image.style.objectFit = "cover";
+
+    });
+
+});
+
+
+/* =====================================================
+   SIMPLE REVEAL EFFECT
+===================================================== */
+
+const revealElements = document.querySelectorAll(
+    ".menu-feature, .why-item, .location-card, .cake-large, .cake-small"
 );
+
+const observer = new IntersectionObserver(
+    entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+
+                observer.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.12
+    }
+);
+
+
+revealElements.forEach(element => {
+
+    element.style.opacity = "0";
+    element.style.transform = "translateY(25px)";
+    element.style.transition =
+        "opacity 0.7s ease, transform 0.7s ease";
+
+    observer.observe(element);
+
+});
