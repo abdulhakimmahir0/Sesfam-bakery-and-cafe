@@ -1,20 +1,13 @@
-/* =====================================================
-   SISFAM CAFÉ & BAKERY
-===================================================== */
-
 const header = document.getElementById("header");
-const menuToggle = document.getElementById("menuToggle");
+const menuButton = document.getElementById("menuButton");
 const nav = document.getElementById("nav");
-const navLinks = document.querySelectorAll(".nav-link");
 
 
-/* =====================================================
-   HEADER SCROLL EFFECT
-===================================================== */
+/* HEADER */
 
 function updateHeader() {
 
-    if (window.scrollY > 40) {
+    if (window.scrollY > 50) {
         header.classList.add("scrolled");
     } else {
         header.classList.remove("scrolled");
@@ -27,140 +20,61 @@ window.addEventListener("scroll", updateHeader);
 updateHeader();
 
 
-/* =====================================================
-   MOBILE MENU
-===================================================== */
+/* MOBILE MENU */
 
-menuToggle.addEventListener("click", () => {
-
+menuButton.addEventListener("click", () => {
     nav.classList.toggle("open");
-
 });
 
 
-/* =====================================================
-   CLOSE MOBILE MENU
-===================================================== */
+/* CLOSE MENU AFTER CLICK */
 
-navLinks.forEach(link => {
+nav.querySelectorAll("a").forEach(link => {
 
     link.addEventListener("click", () => {
-
         nav.classList.remove("open");
-
     });
 
 });
 
 
-/* =====================================================
-   CLOSE MENU WHEN CLICKING OUTSIDE
-===================================================== */
+/* CLOSE WHEN CLICKING OUTSIDE */
 
-document.addEventListener("click", (event) => {
+document.addEventListener("click", event => {
 
-    const clickedInsideNav = nav.contains(event.target);
-    const clickedToggle = menuToggle.contains(event.target);
-
-    if (!clickedInsideNav && !clickedToggle) {
-
+    if (
+        !nav.contains(event.target) &&
+        !menuButton.contains(event.target)
+    ) {
         nav.classList.remove("open");
-
     }
 
 });
 
 
-/* =====================================================
-   ACTIVE NAVIGATION
-===================================================== */
-
-const sections = document.querySelectorAll("section[id]");
-
-function updateActiveNav() {
-
-    const scrollPosition = window.scrollY + 180;
-
-    sections.forEach(section => {
-
-        const sectionTop = section.offsetTop;
-        const sectionBottom = sectionTop + section.offsetHeight;
-
-        const id = section.getAttribute("id");
-
-        if (
-            scrollPosition >= sectionTop &&
-            scrollPosition < sectionBottom
-        ) {
-
-            navLinks.forEach(link => {
-
-                link.classList.remove("active");
-
-                if (link.getAttribute("href") === `#${id}`) {
-                    link.classList.add("active");
-                }
-
-            });
-
-        }
-
-    });
-
-}
-
-window.addEventListener("scroll", updateActiveNav);
-
-
-/* =====================================================
-   CURRENT YEAR
-===================================================== */
+/* FOOTER YEAR */
 
 const year = document.getElementById("year");
 
 if (year) {
-
     year.textContent = new Date().getFullYear();
-
 }
 
 
-/* =====================================================
-   IMAGE FALLBACK
-===================================================== */
+/* IMAGE FADE-IN */
 
-document.querySelectorAll("img").forEach(image => {
+const images = document.querySelectorAll("img");
 
-    image.addEventListener("error", () => {
-
-        image.style.background = "#e9dfd1";
-
-        image.style.objectFit = "cover";
-
-    });
-
-});
-
-
-/* =====================================================
-   SIMPLE REVEAL EFFECT
-===================================================== */
-
-const revealElements = document.querySelectorAll(
-    ".menu-feature, .why-item, .location-card, .cake-large, .cake-small"
-);
-
-const observer = new IntersectionObserver(
+const imageObserver = new IntersectionObserver(
     entries => {
 
         entries.forEach(entry => {
 
             if (entry.isIntersecting) {
 
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
+                entry.target.classList.add("image-visible");
 
-                observer.unobserve(entry.target);
+                imageObserver.unobserve(entry.target);
 
             }
 
@@ -168,18 +82,31 @@ const observer = new IntersectionObserver(
 
     },
     {
-        threshold: 0.12
+        threshold: 0.08
     }
 );
 
 
-revealElements.forEach(element => {
+images.forEach(image => {
 
-    element.style.opacity = "0";
-    element.style.transform = "translateY(25px)";
-    element.style.transition =
-        "opacity 0.7s ease, transform 0.7s ease";
+    image.style.opacity = "0";
+    image.style.transition = "opacity .7s ease";
 
-    observer.observe(element);
+    imageObserver.observe(image);
+
+});
+
+
+/* MAKE IMAGE VISIBLE */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    document.querySelectorAll("img").forEach(image => {
+
+        image.addEventListener("load", () => {
+            image.style.opacity = "1";
+        });
+
+    });
 
 });
